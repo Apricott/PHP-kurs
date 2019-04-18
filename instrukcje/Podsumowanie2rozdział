@@ -1,0 +1,28 @@
+<?php
+$ilosc = X;
+
+//zmienna $kontynuacja sprawdza, czy $ilosc jest zerem
+$kontynuacja = ($ilosc == 0) ? 0 : 1;
+
+if ($kontynuacja == 1) {
+    if ($ilosc > 0) // wyświetlamy ciagi od 0 do 20
+        while ($ilosc > 0) {
+            for ($i = 0; $i < 21; $i++)
+                // od 20 do 0 za pomocą for
+                echo $i;
+            $ilosc--;
+            echo "<br/>"; //przejście do kolejnej linijki
+        }
+    else //$ilosc jest ujemna, wyświetlamy od 20 do 0
+        while ($ilosc < 0) // wypisujemy -$ilosc ciągów
+        {
+            for ($i = 20; $i >= 0; $i--)
+                echo $i;
+            $ilosc++;
+            echo "<br/>";
+        }
+}
+else // jeśli $kontynuacja = 0
+    echo "Brak ciagów do wyświetlenia";
+
+?>

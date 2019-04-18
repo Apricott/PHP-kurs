@@ -1,0 +1,95 @@
+<?php
+
+$wyswietl1 = "Bardzo ";
+$wyswietl1 .= "lubię ";
+$wyswietl1 .= "placki";
+
+echo $wyswietl1."<br/>";
+
+echo 'Moje motto to: "'.$wyswietl1.'"'."<br/>";
+?>
+
+<?php
+
+$string1 = " z sosem";
+$wyswietl = "Bardzo"." lubię "." placki".$string1;
+
+echo $wyswietl."<br/>";
+
+echo 'Moje motto to: "'.$wyswietl.'"'."<br/>";
+?>
+
+<?php
+
+$data[0] = "18";
+$data[1] = "07";
+$data[2] = "1976";
+
+$wyswietl_date = implode(" - ", $data);
+
+echo $wyswietl_date;
+
+?>
+
+<?php
+
+$wpisany_tekst = "Rozwijam swoją wiedzę w dziedzinie PHP.";
+
+$czy = strpos($wpisany_tekst, "cholera");
+
+if ($czy == FALSE)
+    echo "Można wyświetlić: $wpisany_tekst";
+else
+    echo "Tekst zawiera wulgarne słownictwo.";
+
+?>
+
+<?php
+
+$tekst = "Litwo, ojczyzno moja, Ty jesteś jak zdrowie.";
+
+$wyrazy = explode(" ", $tekst);
+
+echo count($wyrazy);
+
+?>
+
+<?php
+
+$wyswietl = "Bardzo lubie placki";
+
+$duze_litery = strtoupper($wyswietl);
+
+echo $duze_litery;
+?>
+
+<?php
+
+$wyswietl = "BarDzo Lubie PlaCki";
+
+$male_litery = strtolower($wyswietl);
+
+echo $male_litery;
+?>
+
+<?php
+
+$ilosc = strlen($wyswietl);
+
+if ($ilosc > 20)
+    echo "Tresc dluzsza niz 20 znakow";
+else
+    echo "Tresc zawiera 20 znakow lub mniej";
+?>
+
+<?php
+
+$wyswietl = "   Bardzo lubie placki   ";
+
+$zdanie = trim($wyswietl);
+
+echo $zdanie;
+?>
+
+<?php
+
