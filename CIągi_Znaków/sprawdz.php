@@ -32,10 +32,21 @@ function sprawdz_telefon($telefon)
 function sprawdz_tresc($tresc)
 {
     $tresc = trim($tresc);
+
+    if (preg_match('(kurwa|chuj|pierdol)', $tresc)) {
+        echo "Tekst zawiera wulgaryzmy; ";
+        return false;
+    }
+
     if (strlen($tresc) < 30)
         return false;
     else
         return $tresc;
+}
+
+function sprawdz_domene($email){
+    $domena = explode("@",$email);
+    return $domena[1];
 }
 
 $email = $_POST['email'];
@@ -67,14 +78,27 @@ if (!$tresc){
 
 }
 
+$domena = sprawdz_domene($email);
+
 if ($blad_danych){
     echo "Wystąpił jeden lub więcej błędów podczas przetwarzania danych. ";
 }
 else {
-    echo "Imię klienta: $imie; \n";
-    echo "Adres e-mail: $email; \n";
-    echo "Numer telefonu: $tel; \n";
-    echo "Treść: $tresc; \n";
+    echo "Imię klienta: $imie;"."<br/>";
+    echo "Adres e-mail: $email;"."<br/>";
+    echo "Numer telefonu: $tel;"."<br/>";
+    echo "Treść: $tresc;"."<br/>";
+    echo "Domena: $domena;"."<br/>";
 }
+
+$dane[0] = $imie;
+$dane[1] = $email;
+$dane[2] = $tel;
+$dane[3] = $tresc;
+$dane[4] = $domena;
+
+$ciag = implode("; ", $dane);
+
+echo "<br/>"."Ciąg: $ciag";
 
 ?>
